@@ -1,0 +1,119 @@
+﻿<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/index.css" /> -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
+    <style>
+        .behind {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+            .behind a.ui-btn {
+                width: 68px;
+                margin: 0px;
+                float: right;
+                border: none;
+            }
+
+            .behind a.delete-btn, .behind a.delete-btn:active, .behind a.delete-btn:visited, .behind a.delete-btn:focus, .behind a.delete-btn:hover {
+                color: white;
+                background-color: red;
+                text-shadow: none;
+            }
+
+            .behind a.ui-btn.pull-left {
+                float: left;
+            }
+
+            .behind a.edit-btn, .behind a.edit-btn:active, .behind a.edit-btn:visited, .behind a.edit-btn:focus, .behind a.edit-btn:hover {
+                color: white;
+                background-color: orange;
+                text-shadow: none;
+            }
+
+        .bought {
+            background-color: #ABDD87 !important;
+        }
+
+        div.box {
+            width: 30em;
+            height: 3em;
+            background-color: #108040;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
+
+
+    <title>Ostoslista</title>
+</head>
+
+<body>
+    <div id="container">
+        <div data-role="page">
+            <div data-role="header" data-theme="a">
+                <h1>Ostoslista</h1>
+                <a id="options" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-gear">Options</a>
+            </div> <!-- /header -->
+            <div data-role="content">
+                <div role="main" class="ui-content">
+                    <input type="text" id="datavalue" />
+                    <button id="btn1" class="ui-btn ui-btn-inline">Save</button>
+                    <button id="btn2" class="ui-btn ui-btn-inline">Clear</button>
+                    <!-- taking photos does not work yet
+                    <img id="image" src="" /> -->
+                </div>
+                <ul id="datalist" data-role="listview" class="swipe-delete"></ul>
+                <!-- sending text messages does not work yet -->
+                <div id="send" class="ui-content" data-role="popup" data-theme="a">
+                    <p id="question">Send as SMS</p>
+                    <div class="ui-grid-a">
+                        <input id="numberTxt" placeholder="Enter mobile number" value="" type="tel" />
+                        <textarea id="messageTxt" placeholder="Enter message"></textarea>
+                        <input type="button" id="sms" value="Send SMS" />
+                    </div>
+                </div><!-- /popup -->
+                <div id="empty" class="ui-content" data-role="popup" data-theme="a">
+                    <p id="question">Text needed!</p>
+                    <div class="ui-grid-a">
+                        <a id="ok" data-role="button" data-mini="true" data-shadow="false" data-theme="a" data-rel="back">Ok!</a>
+                    </div>
+                </div><!-- /popup -->
+                <div id="confirm" class="ui-content" data-role="popup" data-theme="a">
+                    <p id="question">Are you sure you want to clear the list?</p>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <a id="yes" data-role="button" data-mini="true" data-shadow="false" data-theme="a" data-rel="back">Yes</a>
+                        </div>
+                        <div class="ui-block-b">
+                            <a id="cancel" data-role="button" data-mini="true" data-shadow="false" data-theme="a" data-rel="back">Cancel</a>
+                        </div>
+                    </div>
+                </div><!-- /popup -->
+                <div data-role="popup" id="editMenu" data-theme="a">
+                    <ul data-role="listview" data-inset="true" style="min-width:210px;">
+                        <li data-role="list-divider">Choose an action</li>
+                        <li><a id="takePhoto">Take photo</a></li>
+                        <li><a id="delete">Delete</a></li>
+                    </ul>
+                </div><!-- /popup -->
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <script src="cordova.js"></script>
+
+</body>
+</html>
